@@ -12,10 +12,12 @@ def home(request):
         {"Name" : "Aarohi Varma" , "Age" : 2},
     ]
 
-    return render(request,"index.html", context = {'peoples' : peoples})
+    return render(request,"index.html", context = {'peoples' : peoples ,"page" : "Django Application"})
 
 def contact(request):
-    return render(request, "contact.html")
+    context = {'page' : "contact"}
+    return render(request, "contact.html", context)
 
 def about(request):
-    return render(request, "about.html")
+    context = {'page' : "about"}
+    return render(request, "about.html", context)
